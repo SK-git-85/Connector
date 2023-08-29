@@ -63,7 +63,7 @@ def delete_record(request, pk):
     if request.user.is_authenticated:
         delete_obj = Record.objects.get(id=pk)
         delete_obj.delete()
-        messages.success(request,f"Record {id} deleted successfully")
+        messages.success(request,f"Record {pk} deleted successfully")
         return redirect ('home')
     else:
         messages.success(request,"You must be logged in to delete the records")
